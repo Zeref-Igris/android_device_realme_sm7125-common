@@ -52,6 +52,9 @@ on init
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
+    # Disable UFS powersaving
+    write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 0    
+
 on early-fs
     start vold
 
@@ -127,6 +130,9 @@ on boot
 # Restrict permissions to socket file 
 # to hide Magisk & co.
     chmod 440 /proc/net/unix    
+
+    # Enable UFS powersaving
+    write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 1    
 
 # Add a cpuset for the camera daemon
 # We want all cores for camera
@@ -449,4 +455,3 @@ on property:vendor.dcvs.prop=1
 chown system system /sys/bus/platform/devices/soc:fpc1020/irq
 chown system system /sys/bus/platform/devices/soc:fpc1020/irq_enable
 chown system system /sys/bus/platform/devices/soc:fpc1020/wakelock_enable
-
