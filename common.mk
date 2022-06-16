@@ -233,6 +233,10 @@ $(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm
 
+# KProfiles
+PRODUCT_PACKAGES += \
+    KProfiles
+
 # Media
 PRODUCT_PACKAGES += \
     libmm-omxcore \

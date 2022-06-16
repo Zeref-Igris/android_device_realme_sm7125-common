@@ -16,7 +16,7 @@ type vendor_persist_camera_file, file_type;
 # Devinfo
 type proc_devinfo, fs_type, proc_type;
 
-# Vibarator
+# Vibrator
 #type vibrator_sysfs, fs_type, sysfs_type;
 
 # Flash
@@ -32,3 +32,6 @@ type proc_oppo_rf, fs_type, proc_type;
 type proc_fw_update, fs_type, proc_type;
 
 type proc_decimal, fs_type, proc_type;
+
+# KProfiles
+type sysfs_kprofiles, sysfs_type, fs_type;
