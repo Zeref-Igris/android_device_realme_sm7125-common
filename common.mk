@@ -21,6 +21,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BOARD_PLATFORM := atoll
 PRODUCT_USES_QCOM_HARDWARE := true
 
+# Disable Scudo to save RAM.
+PRODUCT_DISABLE_SCUDO := true
+
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
